@@ -1,0 +1,30 @@
+# maven
+build/
+out/
+classes/
+target/
+
+# eclipse
+bin/
+*.launch
+.settings
+.metadata
+
+# idea
+.idea/
+*.ipr
+*.iws
+*.iml
+
+# vscode
+.settings/
+.vscode/
+.classpath
+.project
+
+# macos
+*.DS_Store
+
+# other
+natives/
+desktop.ini
