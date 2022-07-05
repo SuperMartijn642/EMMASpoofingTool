@@ -121,6 +121,8 @@ public class ARPSpoofingAttackHandler implements AttackHandler {
         outputScrollPane.setBorder(null);
         outputScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         frame.add(outputScrollPane);
+
+        this.selectInterface(this.interfaceDropdown.getSelectedIndex() >= 0 ? ((ComboBoxEntryWrapper<PcapNetworkInterface>)this.interfaceDropdown.getSelectedItem()).getObject() : null);
     }
 
     @Override

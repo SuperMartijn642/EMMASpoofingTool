@@ -2,6 +2,7 @@ package emma;
 
 import emma.arp.ARPSpoofingAttackHandler;
 import emma.dns.DNSSpoofingAttackHandler;
+import emma.ssl.SSLStripingAttackHandler;
 
 import java.util.function.Supplier;
 
@@ -11,7 +12,8 @@ import java.util.function.Supplier;
 public enum AttackMode {
 
     ARP_SPOOFING("ARP Spoofing", "Allows you to spoof an ip address by sending ARP packets.", ARPSpoofingAttackHandler::new),
-    DNS_SPOOFING("DNS Spoofing", "Allows you to spoof DNS requests and map domain names to certain ip addresses.", DNSSpoofingAttackHandler::new);
+    DNS_SPOOFING("DNS Spoofing", "Allows you to spoof DNS requests and map domain names to certain ip addresses.", DNSSpoofingAttackHandler::new),
+    SSL_STRIPPING("SSL Stripping", "Allows you to intercept http requests and redirect them as https to the webserver.", SSLStripingAttackHandler::new);
 
     private final String title;
     private final String description;

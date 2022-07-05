@@ -18,13 +18,14 @@ public class NetworkUtils {
 
     /**
      * Gathers a list of all available network interfaces on the system.
+     *
      * @return a list of network interfaces
      * @see Pcaps#findAllDevs()
      */
-    public static List<PcapNetworkInterface> gatherNetworkInterfaces(){
-        try{
+    public static List<PcapNetworkInterface> gatherNetworkInterfaces() {
+        try {
             return Collections.unmodifiableList(Pcaps.findAllDevs());
-        }catch(PcapNativeException e){
+        } catch (PcapNativeException e) {
             Main.displayWarning("Failed to gather available network interfaces!", e);
             return Collections.emptyList();
         }
@@ -32,12 +33,13 @@ public class NetworkUtils {
 
     /**
      * Opens a pcap connection on the given network interface.
+     *
      * @param networkInterface the interface to open a connection on
      * @return an open connection on the network interface
      * @throws PcapNativeException when a system error occurs during connection setup
      * @see PcapNetworkInterface#openLive(int, PcapNetworkInterface.PromiscuousMode, int)
      */
-    public static PcapHandle openConnection(PcapNetworkInterface networkInterface, int timeout) throws PcapNativeException{
+    public static PcapHandle openConnection(PcapNetworkInterface networkInterface, int timeout) throws PcapNativeException {
         return networkInterface.openLive(SNAPSHOT_LENGTH, PcapNetworkInterface.PromiscuousMode.PROMISCUOUS, timeout);
     }
 }

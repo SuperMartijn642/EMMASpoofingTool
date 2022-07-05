@@ -1,8 +1,7 @@
 package emma;
 
 import javax.swing.*;
-import java.io.PrintStream;
-
+import java.io.*;
 /**
  * Created 12/06/2022 by SuperMartijn642
  */
@@ -69,7 +68,6 @@ public class Main {
     public static void displayWarning(String message){
         displayWarning(message, null);
     }
-
     public static void displayError(String message, Exception e){
         System.err.println("[ERROR] " + message);
         if(e != null)
